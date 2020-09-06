@@ -18,7 +18,7 @@ function wfGet(string $id, bool $sanitize = true) : string {
     }
 }
 
-function getPost(string $id) {
+function wfPost(string $id) {
     return wfSanitizeInput($_POST[$id]);
 }
 ?>

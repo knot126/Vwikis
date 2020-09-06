@@ -3,7 +3,7 @@
 require_once($IP . "/includes/Module.php");
 require_once($IP . "/includes/Article.php");
 
-function run() {
+function wfRun() {
     global $wgEnableModules;
     
     if ($wgEnableModules == true) {

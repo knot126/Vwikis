@@ -6,10 +6,6 @@ class User {
     private $mInfo;
     private $mEmail;
     private $mTest;
-
-    function logIn($pswd) {
-        
-    }
 }
 
 ?>

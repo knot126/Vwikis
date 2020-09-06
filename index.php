@@ -8,6 +8,6 @@ require_once($IP . "/includes/DefaultConfig.php");
 require_once($IP . "/LocalConfig.php");
 require_once($IP . "/includes/Igniter.php");
 
-run();
+wfRun();
 
 ?>
