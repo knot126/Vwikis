@@ -14,6 +14,8 @@ class Module {
 function registerModules() {
     /* Function to register modules by looping through them and running their 
      * Main.php file. */
+    global $wgEnabledModules, $IP;
+    
     foreach($wgEnabledModules as $module) {
         echo "<b>Note: </b>Loading module $module.";
         require_once($IP . "/modules/" . $module . "/Main.php");

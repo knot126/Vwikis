@@ -1,6 +1,7 @@
 <?php
 
 require_once($IP . "/includes/Parser.php");
+require_once($IP . "/includes/Action.php");
 
 class Article {
     private $mTitle;
@@ -28,36 +29,30 @@ class Article {
 function renderArticle(Article $article) {
     /* Render the article content. 
      * Currently a dummy function. */
+    ThemeStart();
     $title = getGet("page");
     if ( !$article->exsists() ) {
         $p = "This is the default article for pages without an article. Please <a href=\"index.php?page=" . $title . "&action=edit\">click here</a> to make this article!";
     }
     echo "<h1>" . $article->getTitle . "</h1>";
     echo $p;
+    ThemeEnd();
     return array($title, $p);
 }
 
-function renderLogin() {
-    /* Function for rendering login. 
-     * TODO: Make login work and move to own module. */
-    require_once($IP . "/data/login.xml");
-}
-
 function renderPage() {
-    /* This function starts rendering the article. */
+    /* This is the "real" main function, which takes the user input. */
     $article = new Article();
+    
     $article->setTitle(getGet("page"));
     $action = getGet("action");
     
     // TODO: New themes; remove ThemeStart and ThemeEnd functions
-    ThemeStart();
-    switch ($action) {
-        case "login":
-            renderLogin();
-        default:
-            renderArticle($article);
+    if ($action) {
+        doAction($action);
+    } else {
+        renderArticle($article);
     }
-    ThemeEnd();
 }
 
 ?>
