@@ -2,28 +2,24 @@
 
 require_once($IP . "/includes/Parser.php");
 
-function EditPage() {
+function editPage(string $page) {
 
 }
 
-function UserLogin() {
-    /* Function for rendering login. 
-     * TODO: Make login work and move to own module. */
-    require_once($IP . "/data/xml/login.xml");
+function userLogin() {
+     /* TODO: Make login work and move to own module. */
 }
 
-function Register() {
+function registerUser() {
 
 }
 
-function doAction($action) {
+function doAction(string $action) {
     switch($action) {
-        case "edit":
-            EditPage();
         case "login":
-            UserLogin();
+            userLogin();
         case "regiser":
-            Regiser();
+            registerUser();
     }
 }
 
