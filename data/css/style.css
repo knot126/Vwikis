@@ -1,1 +1,34 @@
- 
+body {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), #6eb78a), url("/wikisoftware/data/img/default.jpg");
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+p {
+    font-size: 14pt;
+}
+
+.full-div {
+    max-width: 1250px;
+    margin: auto;
+    background: #fff;
+    overflow: auto;
+    font-family: "Barlow", "Rubik", sans-serif;
+}
+
+.right-bar-div {
+    float: right;
+    width: 320px;
+}
+
+.left-bar-div {
+    float: left;
+    width: calc(100% - 320px);
+}

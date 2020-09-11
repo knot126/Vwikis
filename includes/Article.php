@@ -14,7 +14,7 @@ class Article {
     }
     
     function exsists() {
-        return $mExsists;
+        return $this->mExsists;
     }
     
     function setTitle($newTitle) {
@@ -31,7 +31,7 @@ function renderArticle(Article $article) {
      * Currently a dummy function. */
     ThemeStart();
     $title = wfGet("page");
-    echo "<h1>" . $article->getTitle . "</h1>";
+    echo "<h1>" . $article->getTitle() . "</h1>";
     if ( !$article->exsists() ) {
         $p = "This is the default article for pages without an article. Please <a href=\"index.php?page=" . $title . "&action=edit\">click here</a> to make this article!";
     }
@@ -56,6 +56,7 @@ function renderForm(string $action) {
 
 function renderPage() {
     /* This is the "real" main function, which takes the user input. */
+    global $wgDebugMessages;
     $article = new Article();
     
     $article->setTitle(wfGet("page"));
