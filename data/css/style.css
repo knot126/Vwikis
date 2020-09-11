@@ -1,14 +1,23 @@
-body {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), #6eb78a), url("/wikisoftware/data/img/default.jpg");
+* {
+    --main-font: "Barlow", "Rubik", sans-serif;
+    --main-color: #37abc8;
+    --main-nav-font-color: #fff;
+    --main-font-size: 14pt;
+    --community-nav-color: #5fbcd3;
+    --community-nav-font-color: #fff;
+    --font-size-title: 32pt;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
 
+h1 { font-family: var(--main-font); font-size: var(--font-size-title); }
+
 a {
     text-decoration-line: none;
+    color: var(--main-color);
 }
 
 p {
@@ -20,15 +29,61 @@ p {
     margin: auto;
     background: #fff;
     overflow: auto;
-    font-family: "Barlow", "Rubik", sans-serif;
+    font-family: var(--main-font);
 }
 
-.right-bar-div {
+.sidebar {
     float: right;
     width: 320px;
 }
 
-.left-bar-div {
+.article {
     float: left;
     width: calc(100% - 320px);
+}
+
+.vwikis-navbar {
+    background: var(--main-color);
+    color: var(--main-nav-font-color);
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.vwikis-logo {
+    font-size: 24pt;
+    padding-right: 0.8em;
+}
+
+.vwikis-navbar-item {
+    padding-right: 0.5em;
+    color: var(--main-nav-font-color);
+}
+
+.community-nav {
+    background: var(--community-nav-color);
+    color: var(--community-nav-font-color);
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.community-nav-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.community-nav-left {
+    float: left;
+    width: 50%;
+}
+
+.community-nav-right {
+    float: right;
+    width: 50%;
+    text-align: right;
 }
