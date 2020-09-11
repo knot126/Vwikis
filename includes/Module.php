@@ -23,5 +23,3 @@ function registerModules() {
         require_once($IP . "/modules/" . $module . "/Main.php");
     }
 }
-
-?>

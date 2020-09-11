@@ -7,5 +7,3 @@ class User {
     private $mEmail;
     private $mTest;
 }
-
-?>

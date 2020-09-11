@@ -47,5 +47,3 @@ $wgWikiLogo = "__WIKI_LOGO__.png";
 /* Show Debug Messages (boolean)
  * If debug messages should be shown at all. */
 $wgDebugMessages = true;
-
-?> 

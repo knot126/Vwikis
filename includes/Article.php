@@ -1,6 +1,6 @@
 <?php
 
-require_once($IP . "/includes/Parser.php");
+require_once($IP . "/includes/Request.php");
 require_once($IP . "/includes/Action.php");
 
 class Article {
@@ -31,21 +31,27 @@ function renderArticle(Article $article) {
      * Currently a dummy function. */
     ThemeStart();
     $title = wfGet("page");
+    echo "<h1>" . $article->getTitle . "</h1>";
     if ( !$article->exsists() ) {
         $p = "This is the default article for pages without an article. Please <a href=\"index.php?page=" . $title . "&action=edit\">click here</a> to make this article!";
     }
-    echo "<h1>" . $article->getTitle . "</h1>";
     echo $p;
     ThemeEnd();
     return array($title, $p);
 }
 
-function renderForm($action) {
+function renderForm(string $action) {
     /* Function for rendering login. 
      * TODO: Make login work and move to own module. */
     global $IP;
     
-    require_once($IP . "/data/xml/login.xml");
+    switch ($action) {
+        case "login":
+            require($IP . "/data/xml/login.xml");
+            
+        default:
+            
+    }
 }
 
 function renderPage() {
@@ -55,12 +61,21 @@ function renderPage() {
     $article->setTitle(wfGet("page"));
     $action = wfGet("action");
     
-    // TODO: New themes; remove ThemeStart and ThemeEnd functions
     if ($action) {
         doAction($action);
     } else {
-        renderArticle($article);
+        
+        // Debug message for article title notification
+        if ($wgDebugMessages) {
+            $x = $article->getTitle();
+            echo "<b>Note:</b> Current article title is $x.<br/>";
+        }
+        
+        // Decide where the user should go (login is a special page)
+        if ($article->getTitle() == "login") {
+            renderForm($article->getTitle());
+        } else {
+            renderArticle($article);
+        }
     }
 }
-
-?>
