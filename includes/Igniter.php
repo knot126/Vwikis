@@ -1,7 +1,8 @@
 <?php 
 
 require_once($IP . "/includes/PageOutput.php");
-// require_once($IP . "/includes/Article.php");
+require_once($IP . "/includes/Database.php");
+require_once($IP . "/includes/Utilities.php");
 
 // Create global objects here
 $wgOutput = new OutputPage();
@@ -18,6 +19,9 @@ function wfRun() {
         registerModules();
     }
     
+    //wfMain();
+    
+    // TODO: This will need to be moved to wfMain()
     while (count($wgUpdateRequests) > 0) {
         wfEvaluateUpdateRequests();
     }

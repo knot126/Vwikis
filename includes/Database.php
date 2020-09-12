@@ -5,8 +5,4 @@ class Database {
     private $mPassword;
     private $mServer;
     private $mConnection;
-    
-    private function __construct() {
-        
-    }
 }

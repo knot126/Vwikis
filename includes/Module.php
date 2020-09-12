@@ -5,10 +5,15 @@ interface Module {
      * "Run" refers to the first time that a module is run, whereas
      * "Init" refers to the initialization of the module. "Update"
      * means to check for anything that may need checking for. This
-     * may be called on by other modules. */
+     * may be called on by other modules. "Done" returns true if the
+     * module has finished all its work, false if not. Please note that
+     * modules are not required to implement this interface and create an
+     * object with it, but it is the only way to request a place in the
+     * queue. */
     public function init();
     public function run();
     public function update();
+    public function done();
 }
 
 interface UnmanagedModule {

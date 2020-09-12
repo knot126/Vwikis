@@ -16,8 +16,13 @@ $wgEnableModules = true;
 /* Enabled Modules (array of strings)
  * The modules that will be loaded on each request. */
 $wgEnabledModules = array(
-    "BasicTheme"
+    "UserInterface"
 );
+
+/* Main Module (string)
+ * Sets the theme module. This will always run.
+ */
+$wgDefaultTheme = "UserInterface";
 
 /* Default Theme (string) 
  * String of the name of the default theme. NOTE: Themes are a special type of 
