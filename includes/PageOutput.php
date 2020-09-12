@@ -5,11 +5,14 @@ class OutputPage {
      * This factory will produce the content of the working page by the end of
      * it's lifetime. */
     
+    // Page content
     private $mContent;
+    
+    // Message queue
     private $mMessages;
     
     function __construct() {
-        /* Just creates the page content. */
+        /* Creates the variables needed by the object. */
         $this->mContent = "";
     }
     
@@ -55,6 +58,6 @@ class OutputPage {
     }
     
     function addMessages() : void {
-        /*  */
+        /* Adds the messages in the queue to the output. */
     }
 }
