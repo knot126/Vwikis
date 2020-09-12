@@ -6,6 +6,7 @@
     --community-nav-color: #5fbcd3;
     --community-nav-font-color: #fff;
     --font-size-title: 32pt;
+    --border-radius-normal: 0.2em;
 }
 
 body, h1, h2, h3, h4, h5, h6, p {
@@ -13,7 +14,13 @@ body, h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
-h1 { font-family: var(--main-font); font-size: var(--font-size-title); }
+h1 { 
+    font-family: var(--main-font); 
+    font-size: var(--font-size-title); 
+    padding-top: 1.0em;
+    padding-bottom: 0.5em;
+    font-weight: normal;
+}
 
 a {
     text-decoration-line: none;
@@ -22,6 +29,8 @@ a {
 
 p {
     font-size: 14pt;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;  
 }
 
 .full-div {
@@ -40,6 +49,25 @@ p {
 .article {
     float: left;
     width: calc(100% - 320px);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button {
+    background: var(--main-color);
+    color: var(--main-nav-font-color);
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+    border-radius: var(--border-radius-normal);
+    border: none;
+    padding: 0.7em 0.4em;
+}
+
+.default-style {
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
 }
 
 .vwikis-navbar {
@@ -68,8 +96,6 @@ p {
     font-family: var(--main-font);
     font-size: var(--main-font-size);
     height: 40px;
-    display: flex;
-    align-items: center;
 }
 
 .community-nav-container {
@@ -80,10 +106,22 @@ p {
 .community-nav-left {
     float: left;
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 
 .community-nav-right {
     float: right;
     width: 50%;
     text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-section-header {
+    font-size: 16pt;
+}
+
+.sidebar-item {
+    padding-bottom: 0.5em;
 }

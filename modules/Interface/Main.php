@@ -13,7 +13,9 @@ function ThemeStart() {
 }
 
 function ThemeEnd() {
+    echo "</div>";
     rightBarContent();
+    echo "</div>";
     echo "</body></html>";
 }
 

@@ -1,5 +1,15 @@
 <?php
 
+class Request {
+    private $m;
+    
+    function __construct() {
+        
+    }
+}
+
+$wgRequest = new Request();
+
 function wfSanitizeInput(string $data) {
     $data = trim($data);
     $data = stripslashes($data);

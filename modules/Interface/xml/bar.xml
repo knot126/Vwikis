@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <div class="sidebar-item" id="sidebar-recent-edits">
+        <p class="sidebar-section-header"><span>Recent Activity</span></p>
+        <p>Recent wiki activity will show here.</p>
+        <!-- -->
+    </div>
+    <div class="sidebar-item" id="sidebar-community">
+        <p class="sidebar-section-header"><span>Community</span></p>
+        <p>Join the Central Wiki community.</p>
+        <p><button class="button full-width" href="#">More About this Wiki</button></p>
+    </div>
+    <div class="sidebar-item" id="sidebar-popular-pages">
+        <p class="sidebar-section-header"><span>Popular Pages</span></p>
+        <p>Most visisted pages will show here.</p>
+    </div>
+</div>

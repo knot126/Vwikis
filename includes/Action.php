@@ -8,8 +8,10 @@ function editPage(string $page) {
 
 function wfUserLogin() {
     /* TODO: Make login work and move to own module. */
+    global $wgPageContent = "";
+    
     if (!array_key_exists("username", $_POST) || !array_key_exists("password", $_POST)) {
-        echo "<b>Error:</b> No login information has been provided.<br>";
+        $wgPageContent = $wgPageContent . "<b>Error:</b> No login information has been provided.<br>";
         exit(1);
     }
     
