@@ -1,11 +1,12 @@
 <?php 
 
-require_once($IP . "/includes/PageOutput.php");
+require_once($IP . "/includes/Page.php");
 require_once($IP . "/includes/Database.php");
 require_once($IP . "/includes/Utilities.php");
 
 // Create global objects here
 $wgOutput = new OutputPage();
+$wgPage = new WikiPage();
 $wgActionHandlers = array();
 $wgUpdateRequests = array();
 
@@ -18,8 +19,6 @@ function wfRun() {
     if ($wgEnableModules == true) {
         registerModules();
     }
-    
-    //wfMain();
     
     // TODO: This will need to be moved to wfMain()
     while (count($wgUpdateRequests) > 0) {

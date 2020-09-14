@@ -16,7 +16,7 @@ $wgEnableModules = true;
 /* Enabled Modules (array of strings)
  * The modules that will be loaded on each request. */
 $wgEnabledModules = array(
-    "UserInterface"
+    "User", "UserInterface"
 );
 
 /* Main Module (string)
@@ -29,16 +29,20 @@ $wgDefaultTheme = "UserInterface";
  * module. */
 $wgDefaultTheme = "BasicTheme";
 
-/* Database Password (string) 
- * The password for the database. */
-$wgDBpassword = "";
+/* Database Server (string) 
+ * The server where the database is located. */
+$wgDBserver = "";
 
 /* Database User (string) 
  * The username for the database. */
 $wgDBuser = "root";
 
-/* Wiki Name (string) 
+/* Database Password (string) 
  * The password for the database. */
+$wgDBpassword = "";
+
+/* Wiki Name (string) 
+ * The name of the wiki. */
 $wgDBname = "vwikis";
 
 /* Assets Directory (string) 

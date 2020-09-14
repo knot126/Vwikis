@@ -1,8 +1,8 @@
 <?php
 
-class Database {
-    private $mUsername;
-    private $mPassword;
-    private $mServer;
-    private $mConnection;
+$wgDatabase = new mysqli($wgDBserver, $wgDBuser, $wgDBpassword);
+
+if ($wgDatabase->connect_error) {
+    
+    exit(1);
 }
