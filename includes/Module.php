@@ -27,6 +27,13 @@ function wfRegisterAction(array $entry) {
     $wgActionHandlers = array_merge($wgActionHandlers, $entry);
 }
 
+function wfDoAction(string $action) {
+    global $wgActionHandlers;
+    global $$wgActionHandlers[$action];
+    
+    $$wgActionHandlers[$action]->run();
+}
+
 function wfRequestUpdate(array $entry) {
     /* Adds an update to the update queue. The entry paramater is the name of
      * the implemented module interface. */

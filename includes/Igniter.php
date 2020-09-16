@@ -9,16 +9,23 @@ $wgOutput = new OutputPage();
 $wgPage = new WikiPage();
 $wgActionHandlers = array();
 $wgUpdateRequests = array();
+$wgSpecialPages = array();
 
 // Module suff needs to be loaded after
 require_once($IP . "/includes/Module.php");
 
 function wfRun() {
-    global $wgEnableModules, $wgUpdateRequests;
+    global $wgEnableModules, $wgUpdateRequests, $wgOutput;
     
     if ($wgEnableModules == true) {
         registerModules();
     }
+    
+    $action = wfGet("action");
+    if ($action != "read") {
+        wfDoAction($action);
+    }
+    wfDoAction("read");
     
     // TODO: This will need to be moved to wfMain()
     while (count($wgUpdateRequests) > 0) {
