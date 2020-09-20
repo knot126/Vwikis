@@ -22,7 +22,9 @@ interface UnmanagedModule {
 }
 
 function wfRegisterAction(array $entry) {
-    /* Registers an action handler */
+    /* Registers an action handler, which are in the format:
+     *     ACTION -> MODULE CLASS
+     * For example: ("test" => "TestModule") */
     global $wgActionHandlers;
     $wgActionHandlers = array_merge($wgActionHandlers, $entry);
 }

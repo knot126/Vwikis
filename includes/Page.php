@@ -107,7 +107,7 @@ class WikiPage {
         $this->mShowSidebar = false;
     }
     
-    public function showSidebar() {
+    public function shouldShowSidebar() {
         /* Get the status of showing the sidebar or not showing it. */
     }
 }

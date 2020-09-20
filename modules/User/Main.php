@@ -26,4 +26,4 @@ function DisplayUserLogin() {
     $wgOutput->append();
 }
 
-wfRegisterSpecialPage("Special:Login");
+// wfRegisterSpecialPage("Special:Login");

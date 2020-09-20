@@ -16,7 +16,7 @@ $wgEnableModules = true;
 /* Enabled Modules (array of strings)
  * The modules that will be loaded on each request. */
 $wgEnabledModules = array(
-    "User", "UserInterface"
+    "User", "UserInterface", "Setup"
 );
 
 /* Main Module (string)
