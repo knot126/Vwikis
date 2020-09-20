@@ -12,54 +12,54 @@ class OutputPage {
     // Message queue
     private $mMessages;
     
-    function __construct() {
+    public function __construct() {
         /* Creates the variables needed by the object. */
         $this->mContent = "";
         $this->mMessages = array();
     }
     
-    function append(string $appendage) {
+    public function append(string $appendage) {
         /* Helper method to append content. */
         $this->mContent = $this->mContent . $appendage;
     }
     
-    function render() : void {
+    public function render() : void {
         /* Render the page. */
         echo $this->mContent;
     }
     
-    function getConent() : string {
+    public function getConent() : string {
         /* Return the content of the page. */
         return $this->mContent;
     }
     
-    function discard() : void {
+    public function discard() : void {
         /* Discard of the page content. */
         $this->mContent = "";
     }
     
-    function addOpeningTag() : void {
+    public function addOpeningTag() : void {
         /* Helper function to add opening HTML tag */
         $this->mContent = $this->mContent . "<html>";
     }
     
-    function addClosingTag() : void {
+    public function addClosingTag() : void {
         /* Helper function to add opening HTML tag */
         $this->mContent = $this->mContent . "</html>";
     }
     
-    function addMessage(string $type, string $message) : void {
+    public function addMessage(string $type, string $message) : void {
         /* This will add a formatted message to the output. */
         array_push($this->mMessages, "<b>$type:</b> $message");
     }
     
-    function insertMessage(string $type, string $message) : void {
+    public function insertMessage(string $type, string $message) : void {
         /* Forcefully append a message to the page output. No gaurentte where 
          * the mssage will end up displaying. */
         $this->mContent = $this->mContent . "<b>$type:</b> $message";
     }
     
-    function displayMessages() : void {
+    public function displayMessages() : void {
         /* Adds the messages in the queue to the output. */
         foreach($this->mMessages as $msg) {
             $this->mContent = $this->mContent . $msg;
@@ -76,7 +76,7 @@ class WikiPage {
     private $mContent;
     private $mShowSidebar;
     
-    private function __construct() {
+    public function __construct() {
         /* Wikipage content constructor */
         $this->mContent = "";
         $this->mShowSidebar = true;

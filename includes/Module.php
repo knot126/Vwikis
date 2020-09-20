@@ -31,9 +31,12 @@ function wfRegisterAction(array $entry) {
 
 function wfDoAction(string $action) {
     global $wgActionHandlers;
-    global $$wgActionHandlers[$action];
+    global ${$wgActionHandlers[$action]};
     
-    $$wgActionHandlers[$action]->run();
+    $af = $wgActionHandlers[$action];
+    print_r($af);
+    print_r($wgActionHandlers);
+    $$af->run();
 }
 
 function wfRequestUpdate(array $entry) {
@@ -50,7 +53,7 @@ function wfEvaluateUpdateRequests() {
     foreach ($wgUpdateRequests as $update) {
         // TODO: If possible, DO NOT rely on eval
         // eval($update)
-        $$update->update();
+        ${$update}->update();
         array_shift($wgUpdateRequests);
     }
 }
@@ -72,7 +75,7 @@ function registerModules() {
     
     foreach($wgEnabledModules as $module) {
         if ($wgDebugMessages) {
-            echo "<b>Note: </b>Loading module $module.";
+            echo "<p><b>Note: </b>Loading module $module.</p>";
         }
         require_once($IP . "/modules/" . $module . "/Main.php");
     }

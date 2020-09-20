@@ -22,7 +22,9 @@ function wfRun() {
     }
     
     $action = wfGet("action");
-    if ($action != "read") {
+    
+    // PLATFORM-1101: Need to check that $action is not null
+    if ($action != "read" && $action) {
         wfDoAction($action);
     }
     wfDoAction("read");

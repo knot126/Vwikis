@@ -13,6 +13,7 @@ function wfCreateDB() {
         echo "<b>Error:</b> Could not create database.";
         exit(1);
     } else {
-        global $wgPage->append("<div style=\"backgorund: pink; font-weight: bold;\">The database was created successfully. Please make sure to set the <code>\$wgSetupFinished</code> varible to some true value, otherwise the database will be set up again.</div>");
+        global $wgPage;
+        $wgPage->append("<div style=\"backgorund: pink; font-weight: bold;\">The database was created successfully. Please make sure to set the <code>\$wgSetupFinished</code> varible to some true value, otherwise the database will be set up again.</div>");
     }
 }
