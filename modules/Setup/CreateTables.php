@@ -24,7 +24,7 @@ function wfCreateTables() {
     $querySuccess = $wgDatabase->query($query);
 
     if ($querySuccess === FALSE) {
-        echo "<b>Error:</b> Could not create database.";
+        echo "<b>Error:</b> Could not create tables.";
         exit(1);
     } else {
         global $wgPage;

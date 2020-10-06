@@ -27,4 +27,4 @@ function SetupModuleDoSetup() {
 }
 
 $Setup = new SetupModule();
-wfRegisterAction(array("setup" => "Setup"));
+wfRegisterAction("setup", $Setup);

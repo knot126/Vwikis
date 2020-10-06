@@ -5,7 +5,7 @@ function wfCreateDB() {
      * TODO: This should check if the database already exsists. */
     global $wgDatabase;
     
-    $query = "CREATE DATABASE ;" . $wgDBname;
+    $query = "CREATE DATABASE " . $wgDBname . ";";
 
     $querySuccess = $wgDatabase->query($query);
 

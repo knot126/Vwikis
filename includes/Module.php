@@ -21,22 +21,18 @@ interface UnmanagedModule {
     public function update();
 }
 
-function wfRegisterAction(array $entry) {
+function wfRegisterAction(string $action, &$module) {
     /* Registers an action handler, which are in the format:
      *     ACTION -> MODULE CLASS
      * For example: ("test" => "TestModule") */
     global $wgActionHandlers;
-    $wgActionHandlers = array_merge($wgActionHandlers, $entry);
+    $wgActionHandlers = array_merge($wgActionHandlers, array($action => $module));
 }
 
 function wfDoAction(string $action) {
     global $wgActionHandlers;
-    global ${$wgActionHandlers[$action]};
     
-    $af = $wgActionHandlers[$action];
-    print_r($af);
-    print_r($wgActionHandlers);
-    $$af->run();
+    $wgActionHandlers[$action]->run();
 }
 
 function wfRequestUpdate(array $entry) {

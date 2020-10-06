@@ -84,7 +84,7 @@ class WikiPage {
     
     public function append(string $appendage) {
         /* Append some content to the page output. */
-        $mContent = $mContent . $appendage;
+        $this->mContent = $this->mContent . $appendage;
     }
     
     public function clear() {

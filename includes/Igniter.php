@@ -17,6 +17,8 @@ require_once($IP . "/includes/Module.php");
 function wfRun() {
     global $wgEnableModules, $wgUpdateRequests, $wgOutput;
     
+    wfConnectToDatabase();
+    
     if ($wgEnableModules == true) {
         registerModules();
     }

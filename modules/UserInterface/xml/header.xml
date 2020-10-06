@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Vwikis</title>
-        <link rel="stylesheet" href="./data/css/style.css"/>
+        <link rel="stylesheet" href="./modules/UserInterface/css/style.css"/>
     </head>
     <body>
         <div class="vwikis-navbar">

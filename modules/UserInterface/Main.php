@@ -31,7 +31,7 @@ class UserInterfaceModule implements Module {
 $UserInterface = new UserInterfaceModule();
 
 function GeneratePageContent() {
-    global $IP, $wgOutput;
+    global $IP, $wgOutput, $wgPage;
     
     $headerPath = $IP . "/modules/UserInterface/xml/header.xml";
     $footerPath = $IP . "/modules/UserInterface/xml/bar.xml";
@@ -40,6 +40,8 @@ function GeneratePageContent() {
     $footer = fopen($footerPath, "r");
     
     $wgOutput->append(fread($header, filesize($headerPath)));
+    $wgOutput->append($wgPage->getTitle());
+    $wgOutput->append($wgPage->get());
     $wgOutput->append("</div>");
     $wgOutput->append(fread($footer, filesize($footerPath)));
     $wgOutput->append("</div>");
@@ -49,4 +51,4 @@ function GeneratePageContent() {
     fclose($footer);
 }
 
-wfRegisterAction(array("read" => "UserInterface"));
+wfRegisterAction("read", $UserInterface);
