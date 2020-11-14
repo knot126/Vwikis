@@ -1,0 +1,28 @@
+{
+	"database": {
+		"type": "mysql",
+		"name": "vwikis",
+		"username": "vwikis",
+		"password": "vwikis",
+		"single": false,
+		"timeout": 360,
+		"path": "/var/www/data/vwikis_database.db"
+	},
+	"modules": {
+		"enable": true,
+		"loaded": ["UserLogin", "UserInterface", "Setup"]
+	},
+	"pod": {
+		"path": "/var/www/data/vwikis_podfile.zip",
+		"dirty": "/var/www/data/vwikis_dirty.zip",
+		"mode": "r+"
+	},
+	"clusterid": 0,
+	"cityid": 0,
+	"assets": "uploads",
+	"theme": {
+		"name": "UserInterface",
+		"logo": "__WIKI_LOGO__.png"
+	},
+	"debug": false
+}

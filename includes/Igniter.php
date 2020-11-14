@@ -3,10 +3,13 @@
 require_once($IP . "/includes/Page.php");
 require_once($IP . "/includes/Database.php");
 require_once($IP . "/includes/Utilities.php");
+require_once($IP . "/includes/Config.php");
 
 // Create global objects here
+$config = new Config();
 $wgOutput = new OutputPage();
 $wgPage = new WikiPage();
+
 $wgActionHandlers = array();
 $wgUpdateRequests = array();
 $wgSpecialPages = array();
